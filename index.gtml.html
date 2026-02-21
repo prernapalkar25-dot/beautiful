@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Aniket 💕</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffd6e8;
+            font-family: Comic Sans MS, cursive;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 80px;
+            font-size: 45px;
+            color: #ff4d6d;
+        }
+
+        p {
+            font-size: 22px;
+            color: #444;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            border: none;
+            background-color: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ff1e4d;
+        }
+
+        .message {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #d6336c;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hi Aniket 💕</h1>
+    <p>I was going to write something romantic...</p>
+    <p>But then I remembered you are already lucky to have me 😌😂</p>
+
+    <button onclick="showMessage()">Click Me 😋</button>
+
+    <div class="message" id="funnyMessage"></div>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "Okay fine… you are cute. But don't let it go to your head 😏",
+                "If you were a vegetable… you’d be a cute-cumber 🥒😂",
+                "You stole my heart… now give me chocolate in return 🍫",
+                "I like you more than pizza… and that’s serious 🍕❤️",
+                "You + Me = Unlimited nonsense forever 🤪💕"
+            ];
+
+            const random = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("funnyMessage").innerHTML = random;
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 400);
+    </script>
+
+</body>
+</html>
